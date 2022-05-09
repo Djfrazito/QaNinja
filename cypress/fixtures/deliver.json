@@ -1,0 +1,51 @@
+{
+  "signup":{
+    "name": "Djalma Frazito",
+    "cpf": "00000014144",
+    "email": "djalma@ds.com",
+    "whatsapp":"73999044282",
+    "address": {
+      "postalcode":"45990292",
+      "street": "Rua da Pituba",
+      "number": "108",
+      "details": "adsoft",
+      "district": "Bela Vista",
+      "city_state": "Teixeira de Freitas/BA"
+    },
+    "deliver_method": "Moto",
+    "cnh": "cnh-digital.jpg"
+  },
+  "cpf_inv":{
+    "name": "Djalma Frazito",
+    "cpf": "000000141ass",
+    "email": "djalma@ds.com",
+    "whatsapp":"73999044282",
+    "address": {
+      "postalcode":"45990292",
+      "street": "Rua da Pituba",
+      "number": "108",
+      "details": "adsoft",
+      "district": "Bela Vista",
+      "city_state": "Teixeira de Freitas/BA"
+    },
+    "deliver_method": "Moto",
+    "cnh": "cnh-digital.jpg"
+  },
+  "email_inv":{
+    "name": "Djalma Frazito",
+    "cpf": "08832940442",
+    "email": "djalma.com.br",
+    "whatsapp":"73999044282",
+    "address": {
+      "postalcode":"45990292",
+      "street": "Rua da Pituba",
+      "number": "108",
+      "details": "adsoft",
+      "district": "Bela Vista",
+      "city_state": "Teixeira de Freitas/BA"
+    },
+    "deliver_method": "Moto",
+    "cnh": "cnh-digital.jpg"
+  }
+  
+}
