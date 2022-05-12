@@ -9,7 +9,7 @@ describe('Signup', () => {
   //   })
   // })
 
-  it('User shold be deliver', function () {
+  it('User should be deliver', function () {
     var deliver = signupFactory.deliver()
 
     signup.go()
@@ -49,7 +49,7 @@ describe('Signup', () => {
     const messages = [
       {field: 'name', output:'É necessário informar o nome'},
       {field: 'cpf', output:'É necessário informar o CPF'},
-      {field: 'email', output:'É necessário informar o email'},
+      {field: 'email', output:'É necessário informar o e-mail'},
       {field: 'postalCode', output:'É necessário informar o CEP'},
       {field: 'number', output:'É necessário informar o número do endereço'},
       {field: 'deliverMethod', output:'Selecione o método de entrega'},
