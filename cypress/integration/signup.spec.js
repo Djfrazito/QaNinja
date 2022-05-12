@@ -1,8 +1,7 @@
 import signup from '../pages/SignupPage'
 import signupFactory from '../factories/SingupFactory'
-const {faker} = require('@faker-js/faker')
 
-describe('Signup', () =>{
+describe('Signup', () => {
 
   // beforeEach(function(){
   //   cy.fixture('deliver').then((d)=>{
@@ -10,19 +9,19 @@ describe('Signup', () =>{
   //   })
   // })
 
-  it('User shold be deliver',function(){
-      var deliver = signupFactory.deliver()
+  it('User shold be deliver', function () {
+    var deliver = signupFactory.deliver()
 
-      signup.go()
-      signup.fillForm(deliver)
-      signup.submit()
-    
-      const expepectdMessage = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.'
-      signup.modalContentShouldBe(expepectdMessage)
-      
+    signup.go()
+    signup.fillForm(deliver)
+    signup.submit()
+
+    const expepectdMessage = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.'
+    signup.modalContentShouldBe(expepectdMessage)
+
   })
 
-  it('Invalid document',function() {
+  it('Invalid document', function () {
 
     var deliver = signupFactory.deliver()
 
@@ -34,7 +33,7 @@ describe('Signup', () =>{
     signup.alertMessageShouldBe('Oops! CPF inválido')
   })
 
-  it('Invalid email',function() {
+  it('Invalid email', function () {
 
     var deliver = signupFactory.deliver()
 
@@ -44,4 +43,31 @@ describe('Signup', () =>{
     signup.submit()
     signup.alertMessageShouldBe('Oops! Email com formato inválido.')
   })
+
+  context('Required Fields', () =>{
+
+    const messages = [
+      {field: 'name', output:'É necessário informar o nome'},
+      {field: 'cpf', output:'É necessário informar o CPF'},
+      {field: 'email', output:'É necessário informar o e-mail'},
+      {field: 'postalCode', output:'É necessário informar o CEP'},
+      {field: 'number', output:'É necessário informar o número do endereço'},
+      {field: 'deliverMethod', output:'Selecione o método de entrega'},
+      {field: 'cnh', output:'Adicione uma foto da sua CNH'},
+    ]
+
+    before(()=>{
+      signup.go()
+      signup.submit()
+    })
+
+    messages.forEach(function(msg){
+      
+      it(`${msg.field} is required`, ()=>{
+        signup.alertMessageShouldBe(msg.output)
+      })
+    })
+
+  })
+
 })

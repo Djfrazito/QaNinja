@@ -34,7 +34,7 @@ class SignupPage {
   }
 
   alertMessageShouldBe(expepectdMessage){
-    cy.get('.alert-error').should('have.text',expepectdMessage)
+    cy.contains('.alert-error',expepectdMessage).should('have.text', expepectdMessage)
   }
 }
 
